@@ -4,8 +4,10 @@ $fs = 0.01;
 /*
  * The RJ45 keystone receiver
  */
+// adjustments to original
 clip_adjustment =0.9;   // some keystone jacks fit too tight so we add a little here
 exterior_slot_adjustment = 3.4; // original 2.6
+// the following have not been changed
 outside_width=18;
 outside_height=25 + clip_adjustment;
 outside_depth=9.9;

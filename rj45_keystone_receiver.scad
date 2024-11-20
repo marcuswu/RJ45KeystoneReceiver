@@ -4,7 +4,8 @@ $fs = 0.01;
 /*
  * The RJ45 keystone receiver
  */
-clip_adjustment =1.6;   // some keystone jacks fit too tight so we add a little here
+clip_adjustment =0.9;   // some keystone jacks fit too tight so we add a little here
+exterior_slot_adjustment = 3.4; // original 2.6
 outside_width=18;
 outside_height=25 + clip_adjustment;
 outside_depth=9.9;
@@ -29,7 +30,7 @@ module rj45Receiver()
 			cube([inside_width, inside_height, exterior_slot]);
 		}
         // exterior slot
-		translate([outside_wall, 2.6+clip_adjustment,
+		translate([outside_wall, exterior_slot_adjustment+clip_adjustment,
                 exterior_slot]) 
         {
 			cube([inside_width, exterior_notch_height, 2]);

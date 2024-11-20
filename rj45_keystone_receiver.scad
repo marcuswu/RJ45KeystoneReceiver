@@ -7,6 +7,7 @@ $fs = 0.01;
 // adjustments to original
 clip_adjustment =0.9;   // some keystone jacks fit too tight so we add a little here
 exterior_slot_adjustment = 3.4; // original 2.6
+
 // the following have not been changed
 outside_width=18;
 outside_height=25 + clip_adjustment;
@@ -38,11 +39,6 @@ module rj45Receiver()
 			cube([inside_width, exterior_notch_height, 2]);
 		}
         // exterior_notch
-    
-        /*echo("exterior_notch_height", exterior_notch_height);
-        echo("exterior_notch_depth", exterior_notch_depth);
-        echo("exterior_notch_depth", exterior_notch_depth);
-        */
 		translate([outside_wall, exterior_notch_height+clip_adjustment,
                 exterior_notch_depth]) 
         {
@@ -88,13 +84,12 @@ module rj45Receiver()
 	}
 }
 
-/*
- * So a hole can be cut for the keystone socket
- */
+// these are needed when fitting the jacks into projects
 function rj45_width() = outside_width;
 function rj45_height() = outside_height;
 function rj45_depth() = outside_depth;
 
+ // So a hole can be cut for the keystone socket
 module rj45VolumeBlock() {
 	cube([outside_width, outside_height, outside_depth]);
 }
